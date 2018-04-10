@@ -1,0 +1,29 @@
+{
+  "name": "grid-prototype-revconf2018",
+  "version": "1.0.0",
+  "description": "Prototyping with CSS Grid for Revolution Conf May 2018",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jessabean/grid-prototype-revconf2018.git"
+  },
+  "keywords": [
+    "gulp",
+    "sass",
+    "javascript",
+    "html5"
+  ],
+  "author": "jessabean",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jessabean/grid-prototype-revconf2018/issues"
+  },
+  "homepage": "https://github.com/jessabean/grid-prototype-revconf2018#readme",
+  "devDependencies": {
+    "browser-sync": "^2.13.0",
+    "express": "^4.15.3",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-sass": "^3.1.0"
+  }
+}
