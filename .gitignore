@@ -17,4 +17,5 @@ node_modules
 .sass-cache/
 *.css.map
 
-css/
+dist/
+src/css/
