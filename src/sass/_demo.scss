@@ -1,8 +1,10 @@
-// Set up page wrapper
+// Wrapper
+// -------------------------
 .wrapper {
   max-width: 20em;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 3em;
   position: relative;
 
   @media screen and (min-width: $breakpoint-md) {
@@ -14,6 +16,8 @@
   }
 }
 
+// Visual styles
+// ---------------------
 * {
   box-sizing: border-box;
 }
@@ -23,12 +27,27 @@ html {
 }
 
 body {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  min-height: 100%;
-  padding: 0;
+  background: #00365d;
+  font-family: "Open Sans", sans-serif;
+}
+
+h1,
+h2 {
+  font-family: "Arvo", serif;
+}
+
+h1 {
+  font-size: 1.6rem;
+  color: #fff;
   margin: 0;
-  font-family: San Francisco, Helvetica Neue, Arial, sans-serif;
+
+  @media screen and (min-width: $breakpoint-md) {
+    font-size: 2.1rem;
+  }
+
+  @media screen and (min-width: $breakpoint-lg) {
+    font-size: 2.5rem;
+  }
 }
 
 img {
@@ -39,11 +58,55 @@ img {
 .page-footer {
   grid-row: 3;
   padding: 1em;
-  background: #C6E5D9;
-  color: #382F2D;
+  color: #fff;
   text-align: center;
 
   a {
-    color: #5D445D;
+    color: #e066ad;
   }
+
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+.item {
+  background: #fff;
+}
+
+.item-1 {
+  background: #a5cfed;
+}
+
+.item h2 {
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 0.2em 0.5em;
+  background: #a5cfed;
+
+  @media screen and (min-width: $breakpoint-md) {
+    font-size: 1.5rem;
+  }
+}
+
+.item p {
+  margin: 0;
+  padding: 0.5em;
+}
+
+.see-more a {
+  color: #fff;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.media {
+  display: flex;
+  flex-direction: column;
+}
+
+.media-content {
+  flex: 1 1 auto;
 }
