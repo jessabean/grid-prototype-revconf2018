@@ -16,109 +16,183 @@
   }
 }
 
-// Grid styles
-// -------------------------
 .grid {
-  display: grid;
-  grid-template-columns: repeat($grid-columns-sm, 1fr);
-  grid-gap: $gutter-sm;
-  margin-bottom: $gutter-sm;
-
-  @media screen and (min-width: $breakpoint-md) {
-    grid-template-columns: repeat($grid-columns-md, 1fr);
-  }
-
-  @media screen and (min-width: $breakpoint-lg) {
-    grid-template-columns: repeat($grid-columns-lg, 1fr);
-    grid-gap: $gutter-lg;
-    margin-bottom: $gutter-lg;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: -0.375rem;
 }
-
-// Items - Small screens
-// ---------------------
 
 .grid > * {
-  grid-column: 1 / span 6;
+  flex: 1 1 auto;
+  margin: 0.375rem;
 }
 
-// Items - Medium screens
-// ---------------------
-
-@media screen and (min-width: 48em) {
-  .wrapper {
-    max-width: 38em;
-  }
-
+@media screen and (min-width: $breakpoint-md) {
   .grid {
-    grid-template-columns: repeat(12, 1fr);
+    flex-direction: row;
   }
 
   .heading {
-    grid-column: 1 / span 9;
-    grid-row: 1;
+    flex: 1 1 calc(75% - 0.75rem);
+    order: 1;
+  }
+
+  .item-2,
+  .item-3,
+  .item-4 {
+    flex: 1 1 calc(33.333% - 0.75rem);
   }
 
   .see-more {
-    grid-column: 10 / span 3;
-    grid-row: 1;
+    flex: 1 1 calc(25% - 0.75rem);
+    order: 2;
     text-align: right;
     align-self: center;
   }
 
   .item-1 {
-    grid-column: 1 / span 12;
+    order: 3;
   }
 
   .item-2 {
-    grid-column: 1 / span 4;
+    order: 4;
   }
 
   .item-3 {
-    grid-column: 5 / span 4;
+    order: 5;
   }
 
   .item-4 {
-    grid-column: 9 / span 4;
+    order: 6;
   }
 }
 
-// Items - Large screens
-// ---------------------
-@media screen and (min-width: 64em) {
-  .wrapper {
-    max-width: 55em;
-  }
-
+@media screen and (min-width: $breakpoint-lg) {
   .grid {
-    grid-template-columns: repeat(15, 1fr);
-    grid-gap: 1.25em;
-    grid-auto-flow: row dense;
+    margin: -0.625rem;
+  }
+  
+  .grid > * {
+    margin: 0.625rem;
   }
 
   .heading {
-    grid-column: 1 / span 12;
-  }
-
-  .see-more {
-    grid-column: span 3;
+    flex-basis: calc(80% - 1.25rem);
   }
 
   .item-1 {
-    grid-column: 1 / span 12;
-    grid-row: 2 / span 3;
+      flex-basis: calc(100% - 1.25rem);
+    }
+
+    .item-2,
+    .item-3,
+    .item-4 {
+      flex: 1 1 calc(33.333% - 1.25rem);
+    }
+
+  .see-more {
+      flex-basis: calc(20% - 1.25rem);
+    }
+}
+
+@supports (display: grid) {
+  // Grid styles
+  // -------------------------
+  .grid {
+    display: grid;
+    grid-template-columns: repeat($grid-columns-sm, 1fr);
+    grid-gap: $gutter-sm;
+    margin: 0;
+    margin-bottom: $gutter-sm;
+
+    @media screen and (min-width: $breakpoint-md) {
+      grid-template-columns: repeat($grid-columns-md, 1fr);
+    }
+
+    @media screen and (min-width: $breakpoint-lg) {
+      grid-template-columns: repeat($grid-columns-lg, 1fr);
+      grid-gap: $gutter-lg;
+      margin-bottom: $gutter-lg;
+    }
   }
 
-  .item-2 {
-    grid-column: span 3;
+  // Items - Small screens
+  // ---------------------
+
+  .grid > * {
+    grid-column: 1 / span 6;
+    margin: 0;
   }
 
-  .item-3 {
-    grid-column: span 3;
+  // Items - Medium screens
+  // ---------------------
+
+  @media screen and (min-width: 48em) {
+    .grid {
+      grid-template-columns: repeat(12, 1fr);
+    }
+
+    .heading {
+      grid-column: 1 / span 9;
+      grid-row: 1;
+    }
+
+    .see-more {
+      grid-column: 10 / span 3;
+      grid-row: 1;
+    }
+
+    .item-1 {
+      grid-column: 1 / span 12;
+    }
+
+    .item-2 {
+      grid-column: 1 / span 4;
+    }
+
+    .item-3 {
+      grid-column: 5 / span 4;
+    }
+
+    .item-4 {
+      grid-column: 9 / span 4;
+    }
   }
 
-  .item-4 {
-    grid-column: span 3;
+  // Items - Large screens
+  // ---------------------
+  @media screen and (min-width: 64em) {
+    .grid {
+      grid-template-columns: repeat(15, 1fr);
+      grid-gap: 1.25em;
+      grid-auto-flow: row dense;
+    }
+
+    .heading {
+      grid-column: 1 / span 12;
+    }
+
+    .see-more {
+      grid-column: span 3;
+    }
+
+    .item-1 {
+      grid-column: 1 / span 12;
+      grid-row: 2 / span 3;
+    }
+
+    .item-2 {
+      grid-column: span 3;
+    }
+
+    .item-3 {
+      grid-column: span 3;
+    }
+
+    .item-4 {
+      grid-column: span 3;
+    }
   }
 }
 
