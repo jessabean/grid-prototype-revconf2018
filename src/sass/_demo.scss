@@ -104,17 +104,6 @@
     grid-template-columns: repeat($grid-columns-sm, 1fr);
     grid-gap: $gutter-sm;
     margin: 0;
-    margin-bottom: $gutter-sm;
-
-    @media screen and (min-width: $breakpoint-md) {
-      grid-template-columns: repeat($grid-columns-md, 1fr);
-    }
-
-    @media screen and (min-width: $breakpoint-lg) {
-      grid-template-columns: repeat($grid-columns-lg, 1fr);
-      grid-gap: $gutter-lg;
-      margin-bottom: $gutter-lg;
-    }
   }
 
   // Items - Small screens
@@ -166,7 +155,6 @@
     .grid {
       grid-template-columns: repeat(15, 1fr);
       grid-gap: 1.25em;
-      grid-auto-flow: row dense;
     }
 
     .heading {
@@ -183,15 +171,15 @@
     }
 
     .item-2 {
-      grid-column: span 3;
+      grid-column: 13 / span 3;
     }
 
     .item-3 {
-      grid-column: span 3;
+      grid-column: 13 / span 3;
     }
 
     .item-4 {
-      grid-column: span 3;
+      grid-column: 13 / span 3;
     }
   }
 }
